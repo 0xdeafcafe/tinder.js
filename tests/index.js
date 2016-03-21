@@ -1,4 +1,3 @@
-var TinderClient = require('./../lib/index');
-var client = TinderClient('swag');
-console.log(client);
-//console.log(client.getUpdates());
+var TinderClient = require('./../lib').default;
+var client = new TinderClient('swag');
+console.log(client.getUpdates());
