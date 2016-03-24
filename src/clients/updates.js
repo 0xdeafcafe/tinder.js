@@ -1,6 +1,5 @@
 export default class UpdatesClient {
-	constructor(apiKey, jsonClient) {
-		this.apiKey = apiKey;
+	constructor(jsonClient) {
 		this.client = jsonClient;
 	}
 
