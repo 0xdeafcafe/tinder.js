@@ -1,9 +1,11 @@
-export default class UsersClient {
-	constructor(jsonClient) {
-		this.client = jsonClient;
+import ApiClient from './api-client';
+
+export default class UsersClient extends ApiClient {
+	constructor(jsonClient, tinderAuth) {
+		super(jsonClient, tinderAuth);
 	}
 
 	async get(id) {
-		return await this.client('get', `user/${id}`);
+		return await this.doRequest('get', `user/${id}`);
 	}
 }
