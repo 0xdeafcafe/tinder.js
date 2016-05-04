@@ -1,17 +1,16 @@
 import UpdatesClient from './../tinder-auth'
 
 export default class ApiClient {
-	constructor(jsonClient, tinderAuth) {
+	constructor(jsonClient, token) {
 		this.client = jsonClient;
-		this.tinderAuth = tinderAuth;
+		this.token = token;
 	}
 
 	async doRequest(method, path, query, body) {
-		var token = await this.tinderAuth.getToken();
 		return await this.client(method, path, query, body, {
 			headers: {
-				'X-Auth-Token': token,
-				'Authorization': `Token token="${token}"`,
+				'X-Auth-Token': this.token,
+				'Authorization': `Token token="${this.token}"`,
 			}
 		});
 	}

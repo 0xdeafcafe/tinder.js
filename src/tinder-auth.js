@@ -1,8 +1,6 @@
 import 'babel-core/register';
 import 'babel-polyfill';
-import JsonClient from 'json-client';
-import NodeFetch from 'node-fetch';
-JsonClient.fetch = NodeFetch;
+import JsonClient from 'json-client-node';
 
 export default class TinderAuth {
 	constructor(fbId, fbToken, forceRefresh) {

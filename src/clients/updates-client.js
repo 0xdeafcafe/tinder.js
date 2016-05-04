@@ -1,8 +1,8 @@
 import ApiClient from './api-client';
 
 export default class UpdatesClient extends ApiClient {
-	constructor(jsonClient, tinderAuth) {
-		super(jsonClient, tinderAuth);
+	constructor(jsonClient, token) {
+		super(jsonClient, token);
 	}
 
 	async get(lastUpdated = undefined) {
